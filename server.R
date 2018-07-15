@@ -13,7 +13,7 @@ function(input, output, session) {
   
   output$date_text  <- renderText({
     
-    paste("You birth date is", as.character(input$date), ".")
+    paste0("You birth date is ", as.character(input$date), ".")
   
     })  # end renderText
   
@@ -29,7 +29,7 @@ function(input, output, session) {
       as.character(num_players),
       " players at World Cup 2018 (",
       round(100*(as.numeric(num_players)/(nrow(players))), 0),
-      " per cent) were younger than you."
+      " per cent) were younger than you (listed in the table below)."
     )
     
   })  # end renderText

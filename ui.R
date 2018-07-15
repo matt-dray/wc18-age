@@ -19,7 +19,7 @@ fluidPage(
     wellPanel(
       dateInput(
         "date",
-        label = "Date input: yyyy-mm-dd",
+        label = "Your birth date (YYYY-MM-DD format)",
         value = Sys.Date()
       )  # end dateInput()
     )  # end wellPanel()
