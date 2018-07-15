@@ -12,29 +12,36 @@ function(input, output, session) {
   # print an integer rather than a date.
   
   output$date_text  <- renderText({
+    
     paste("You birth date is", as.character(input$date), ".")
-  })  # end renderText
+  
+    })  # end renderText
   
   # COUNT OF PLAYERS OUTPUT
   
   output$player_count  <- renderText({
+    
     num_players <- players %>% 
       filter(dob > ymd(input$date)) %>%
       nrow()
+    
     paste0(
       as.character(num_players),
       " players at World Cup 2018 (",
-      round(num_players/nrow(players), 0),
+      round(100*(as.numeric(num_players)/(nrow(players))), 0),
       " per cent) were younger than you."
-      )
+    )
+    
   })  # end renderText
   
   # DATATABLE OUTPUT
   
   output$player_datatable <- renderDataTable({
+    
     num_players <- players %>%
       filter(dob > ymd(input$date)) %>% 
       arrange(dob, team, caps)
+    
   })
   
 }  # end function()
