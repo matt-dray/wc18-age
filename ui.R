@@ -5,9 +5,14 @@
 library(shiny)
 
 fluidPage(
+  
+  # TITLE
+  
   titlePanel(
     "How many footballers at World Cup 2018 are younger than you?"
   ),  # end titlePanel()
+  
+  # INPUT PANEL
   
   column(
     4,
@@ -20,9 +25,15 @@ fluidPage(
     )  # end wellPanel()
   ),  # end column()
   
+  # MAIN PANEL
+  
   column(
     width = 6,
-    verbatimTextOutput("dateText")
+    textOutput("date_text"),
+    HTML("<p>"),
+    textOutput("player_count"),
+    HTML("<p>"),
+    DT::dataTableOutput("player_datatable")
   )  # end column()
   
 )  # end fluidPage()
