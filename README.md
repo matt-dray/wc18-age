@@ -12,5 +12,6 @@ A minimal app made for a laugh. Might never be completed properly.
 
 Data prepared by AllezCannes, scraped from Wikipedia.
 
-* Github: https://github.com/AllezCannes/WorldCupSquads/blob/master/README.md
+* GitHub: https://github.com/AllezCannes/WorldCupSquads/blob/master/README.md
 * Data: https://github.com/AllezCannes/WorldCupSquads
+* The app the data was prepared for: https://allezcannes.shinyapps.io/Soccer_squads/
