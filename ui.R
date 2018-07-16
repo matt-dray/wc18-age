@@ -44,6 +44,7 @@ fluidPage(theme = shinytheme("united"),
     textOutput("parent_count"),
     HTML("<p>"),
     h2("List of whippersnappers"),
+    p("These players are younger than you."),
     HTML("<p>"),
     DT::dataTableOutput("player_datatable")
   )  # end column()
