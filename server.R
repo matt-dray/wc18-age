@@ -50,11 +50,11 @@ function(input, output, session) {
       nrow()
     
     paste0(
-      "You could be a parent to ",
+      "You could be a parent (i.e. 18 years older) to ",
       as.character(num_players_parent),
       " players at World Cup 2018 (",
       round(100*(as.numeric(num_players_parent)/(nrow(players))), 0),
-      " per cent) -- i.e. there's 18 years or more between you."
+      " per cent)."
     )
     
   })  # end renderText
