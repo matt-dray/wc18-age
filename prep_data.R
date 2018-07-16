@@ -28,10 +28,14 @@ players_clean <- readRDS("data/players.rds") %>%
   clean_names() %>% 
   mutate(
     date_no_age = str_replace(date_of_birth_age, " \\(.*\\)", ""),
-    dob = dmy(date_no_age)
+    dob = dmy(date_no_age),
+    age = floor(
+      as.numeric(
+        difftime(ymd("2018-06-14"), dob), units = "days") / 365.242)
   ) %>% 
   select(
-    name = player, dob, team = countries, caps, club, pos = playing_position
+    name = player, dob, age, team = countries, caps, club, pos = playing_position
   )
 
+# save the data
 saveRDS(players_clean, "data/players_clean.rds")

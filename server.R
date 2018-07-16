@@ -1,4 +1,5 @@
-
+# wc18-age ui
+# matt dray
 # july 2018
 
 library(shiny)
@@ -13,7 +14,13 @@ function(input, output, session) {
   
   output$date_text  <- renderText({
     
-    paste0("You birth date is ", as.character(input$date), ".")
+    paste0(
+      "Your birth date is ",
+      as.character(input$date),
+      ". You were ", 
+      floor(as.numeric(difftime(ymd("2018-06-14"), ymd(input$date)), units="days") / 365.242),
+      " years old at the start of the World Cup on 14 June 2018."
+    )
   
     })  # end renderText
   
@@ -29,7 +36,25 @@ function(input, output, session) {
       as.character(num_players),
       " players at World Cup 2018 (",
       round(100*(as.numeric(num_players)/(nrow(players))), 0),
-      " per cent) were younger than you (listed in the table below)."
+      " per cent) were younger than you."
+    )
+    
+  })  # end renderText
+  
+  # COUNT OF PLAYERS YOU COULD PARENT OUTPUT
+  
+  output$parent_count  <- renderText({
+    
+    num_players_parent <- players %>% 
+      filter(dob > (ymd(input$date) + years(18))) %>%
+      nrow()
+    
+    paste0(
+      "You could be a parent to ",
+      as.character(num_players_parent),
+      " players at World Cup 2018 (",
+      round(100*(as.numeric(num_players_parent)/(nrow(players))), 0),
+      " per cent) -- i.e. there's 18 years or more between you."
     )
     
   })  # end renderText
