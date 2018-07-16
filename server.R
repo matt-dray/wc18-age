@@ -50,7 +50,7 @@ function(input, output, session) {
       nrow()
     
     paste0(
-      "You could be a parent to ",
+      "You could be a parent to at least ",
       as.character(num_players_parent),
       " players at World Cup 2018 (",
       round(100*(as.numeric(num_players_parent)/(nrow(players))), 0),
