@@ -35,7 +35,7 @@ function(input, output, session) {
     paste0(
       as.character(num_players),
       " players at World Cup 2018 (",
-      round(100*(as.numeric(num_players)/(nrow(players))), 0),
+      round(100*(as.numeric(num_players)/(nrow(players))), 1),
       " per cent) were younger than you."
     )
     
@@ -53,7 +53,7 @@ function(input, output, session) {
       "You could be a parent to at least ",
       as.character(num_players_parent),
       " players at World Cup 2018 (",
-      round(100*(as.numeric(num_players_parent)/(nrow(players))), 0),
+      round(100*(as.numeric(num_players_parent)/(nrow(players))), 1),
       " per cent) because you're at least 18 years older than them."
     )
     
