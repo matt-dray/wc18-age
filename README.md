@@ -6,7 +6,7 @@ How many players at World Cup 2018 were older than you? A surefire way to make y
 
 App is live here: https://mattdray.shinyapps.io/wc18-age/ (hosted on a free account, so will max out after 25 hours of use per month).
 
-A minimal app made for a laugh. Might never be completed properly.
+There's a blog about this too: https://www.rostrum.blog/2018/07/17/world-cup-age-app/
 
 ## Testimonials
 
